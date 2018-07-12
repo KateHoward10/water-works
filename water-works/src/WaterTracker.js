@@ -1,19 +1,20 @@
 import { connect } from "react-redux";
 import Water from './components/Water';
-import { submit } from './data/actions';
-import { display } from './data/actions';
+import { getDrinks, postDrink, deleteDrink, putDrink } from './data/api';
+
 
 const mapStateToProps = state => {
 	return {
 		drinks: state.get("drinks"),
-		total: state.get("total"),
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		submit: ( amount ) => dispatch(submit(amount)),
-		display: ( drinks ) => dispatch(display(drinks)),
+		onLoad: () => dispatch(getDrinks()),
+		onSubmit: ( data ) => dispatch(postDrink(data)),
+		onDelete: ( id ) => dispatch(deleteDrink(id)),
+		onEdit: ( id, data ) => dispatch(putDrink(id, data)),
 	}
 };
 

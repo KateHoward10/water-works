@@ -1,20 +1,31 @@
-import { Map, List } from "immutable";
+// import { Map } from "immutable";
 
-const recordDrink = ({ amount }) => {
-	return Map({
-		time: new(Date),
-		amount: amount,
-	});
-};
+// const recordDrink = ({ amount }) => {
+// 	return Map({
+// 		time: new(Date)(),
+// 		amount: amount,
+// 	});
+// };
 
-const submit = (state, action) => state.update("drinks", drinks => drinks.push(recordDrink(action)));
+const addDrink = (state, {amount}) => state.update("drinks", drinks => drinks.push(amount));
 
-const display = (state, action) => state.update("total", total => state.get("drinks").map(drink => drink.get("amount")).reduce((amount, sum) => +amount + +sum, 0));
+const setDrinks = (state, { drinks }) => state.set("drinks", drinks);
+
+const removeDrink = (state, { id }) => state.update("drinks", drinks => (
+	drinks.filter(drink => (drink.get("id") !== id)
+)));
+
+const updateDrink = (state, {id, amount}) => state.update("drinks", drinks => (
+	drinks.map(d => (d.get("id") === id) ?
+		d.set("amount", amount) : d ))
+);
 
 const reducer = (state, action) => {
 	switch (action.type) {
-		case "submit": return submit(state, action);
-		case "display": return display(state, action);
+		case "addDrink": return addDrink(state, action);
+		case "setDrinks": return setDrinks(state, action);
+		case "removeDrink": return removeDrink(state, action);
+		case "updateDrink": return updateDrink(state, action);
 		default: return state;
 	}
 };

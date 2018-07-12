@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import Input from './Input';
+import Add from './Add';
 import Counter from './Counter';
 import List from './List';
 
 class Water extends Component {
 
+	componentDidMount() {
+		this.props.onLoad();
+	}
+
 	render() {
-		const {amount, total, drinks, submit, display} = this.props;
+		const {drinks} = this.props;
 		return (
 			<div>
-				<Input amount={amount} submit={submit} display={display}/>
-				<Counter total={total}/>
-				<List drinks={drinks}/>
+				<Add onSubmit={this.props.onSubmit}/>
+				<Counter drinks={drinks}/>
+				<List onEdit={this.props.onEdit} onDelete={this.props.onDelete} drinks={drinks}/>
 			</div>
 		);
 	}

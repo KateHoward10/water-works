@@ -7,11 +7,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Water Works</h1>
+          <h1 className="App-title">🚰  Water Works</h1>
+          <p className="App-intro">
+            Keep track of your water intake, stay healthy and hydrated
+          </p>
         </header>
-        <p className="App-intro">
-          Keep track of your water intake, stay healthy and hydrated.
-        </p>
         <WaterTracker  />
       </div>
     );

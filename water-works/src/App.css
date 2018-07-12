@@ -1,20 +1,40 @@
+
+@font-face {
+  font-family: "Wasser";
+  src: url(./fonts/wasser/wasser.ttf);
+}
+
 .App {
   text-align: center;
-  font-family: Verdana, sans-serif;
+  font-family: "Wasser", Verdana, sans-serif;
 }
 
 .App-header {
+  padding: 5vw;
+  background: linear-gradient(#7aefe7, #42c8f4);
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
   color: navy;
 }
 
 .App-intro {
-  font-size: large;
+}
+
+.form {
+  padding: 5vw;
+}
+
+.counter {
+  background-color: #42c8f4;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 10%;
 }
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

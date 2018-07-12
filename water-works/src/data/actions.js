@@ -1,14 +1,29 @@
 
-export const submit = amount => {
-    return {
-        type: "submit",
-        amount: amount,
-    };
-};
-
-export const display = total => {
+export const addDrink = amount => {
 	return {
-		type: "display",
-		total: total,
+		type: "addDrink",
+		amount: amount,
+	};
+}
+
+export const setDrinks = drinks => {
+	return {
+		type: "setDrinks",
+		drinks: drinks,
+	};
+}
+
+export const removeDrink = id => {
+	return {
+		type: "removeDrink",
+		id: id,
+	}
+}
+
+export const updateDrink = (id, drink) => {
+	return {
+		type: "updateDrink",
+		id: id,
+		drink: drink,
 	}
 }

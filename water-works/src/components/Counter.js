@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 	render() {
-		const {total} = this.props;
+		const {drinks} = this.props;
 
 	    return (
-      		<div>
-      			<h3>{total} ml</h3>
+      		<div className="counter">
+      			<h3>Today's total:</h3>
+      			<h2>{drinks.map(drink => drink.get("amount")).reduce((amount, sum) => +amount + +sum, 0)} ml</h2>
 			</div>
 	    )
 	}
