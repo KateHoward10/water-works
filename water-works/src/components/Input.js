@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Input = ({onSubmit, value, onChange}) => (
-	<form onSubmit={ onSubmit }>
-    	<input type="text" value={value} onChange={onChange}/>
-	</form>
+	<input type="text" value={value} onChange={onChange} onSubmit={ onSubmit }/>
 );
 
 export default Input;

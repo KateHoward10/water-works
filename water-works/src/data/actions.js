@@ -20,10 +20,10 @@ export const removeDrink = id => {
 	}
 }
 
-export const updateDrink = (id, drink) => {
+export const updateDrink = (id, amount) => {
 	return {
 		type: "updateDrink",
 		id: id,
-		drink: drink,
+		amount: amount,
 	}
 }

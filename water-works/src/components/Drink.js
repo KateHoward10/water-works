@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import Input from './Input';
+import moment from 'moment';
 
 class Drink extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			editable: false,
-			value: props.drink.get("drink"),
+			amount: props.drink.get("amount"),
 		}
 		this.delete = this.delete.bind(this);
 		this.edit = this.edit.bind(this);
-		this.editable = this.editable.bind(this);
+		this.makeEditable = this.makeEditable.bind(this);
 		this.update = this.update.bind(this);
 	}
 
 	update(e) {
-		this.setState({ value: e.target.value });
+		this.setState({ amount: e.target.value });
 	}
 
 	delete() {
@@ -27,28 +28,28 @@ class Drink extends Component {
 	edit(e) {
 		e.preventDefault();
 		const id = this.props.drink.get("id");
-		const data = {value: this.state.value};
+		const data = {amount: this.state.amount};
 		this.props.onEdit(id, data);
 		this.setState({
-			editable: false
+			editable: false,
+			amount: data
 		});
 	}
 
-	editable() {
+	makeEditable() {
 		this.setState({
-			editable: true
+			editable: !this.state.editable
 		});
 	}
 
 	render() {
 		const { drink } = this.props;
-
-		return (	
+		return (
 			<li>
-				{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.value }/> : <span onClick={this.editable}>{ drink.get("drink") }</span>}
-				<div>
-					<Button onClick={this.delete} buttonName="☓"/>
-				</div>
+				{moment(drink.get("created_at")).calendar() + ": "}
+				<span className="drink-item">{this.state.editable ? <Input onChange={ this.update } value={ this.state.amount }/> : drink.get("amount") +" ml"}</span>
+				<Button buttonName={this.state.editable ? "✓" : "Edit"} onClick={this.state.editable ? this.edit : this.makeEditable} />
+				<Button onClick={this.delete} buttonName="☓"/>
 			</li>
 		);
 	}

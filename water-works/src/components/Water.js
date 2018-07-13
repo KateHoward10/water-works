@@ -16,6 +16,7 @@ class Water extends Component {
 				<Add onSubmit={this.props.onSubmit}/>
 				<Counter drinks={drinks}/>
 				<List onEdit={this.props.onEdit} onDelete={this.props.onDelete} drinks={drinks}/>
+				<footer className="footer">Recommended daily water intake is 6-8 glasses (1.2 litres)</footer>
 			</div>
 		);
 	}
