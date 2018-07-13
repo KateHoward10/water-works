@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Button from './Button';
+import Input from './Input';
 
 class Add extends Component {
 	constructor(props) {
@@ -22,7 +23,7 @@ class Add extends Component {
 	render() {
 		return (
 			<form className="form" onSubmit={ this.submit }>
-			    <input onChange={ this.update } type="text"/>
+			    <Input onChange={ this.update } type="text"/>
 			    <span>ml    </span>
 			    <Button buttonName="Add Drink"/>
 			</form>

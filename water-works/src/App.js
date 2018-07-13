@@ -9,7 +9,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title"><span role="img" aria-label="tap emoji">🚰</span>  Water Works</h1>
           <p className="App-intro">
-            Keep track of your water intake<br></br>Stay healthy and hydrated
+            Keep track of your water intake, stay healthy and hydrated
           </p>
         </header>
         <WaterTracker  />

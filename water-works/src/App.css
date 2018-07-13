@@ -32,6 +32,7 @@
 
 .form {
   padding: 5vw;
+  font-family: 'World of Water', 'Helvetica Neue', sans-serif;
 }
 
 .counter {
@@ -50,11 +51,29 @@
   font-size: 1.8em;
 }
 
+.target {
+  width: 50vw;
+  height: 50vh;
+  border: 2px solid lightgrey;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  margin: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: auto;
+}
+
+.water-blob {
+  background-color: #97e9ff;
+  border-radius: 0 0 8px 8px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 button {
@@ -80,7 +99,6 @@ button {
   .App-title{
     font-size: 3em;
   }
-
 
 }
 
@@ -112,6 +130,11 @@ button {
   .overview {
 
   }
+
+
+  .target {
+    width: 20vw;
+  }
   
   .list-title {
     font-size: 1.8em;
@@ -119,6 +142,7 @@ button {
 
   ul {
     font-size: 1em;
+    text-align: right;
   }
 
   .footer {
