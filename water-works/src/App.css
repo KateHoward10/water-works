@@ -1,12 +1,19 @@
 
 @font-face {
-  font-family: 'Wasser Regular';
-  src: url(./fonts/wasser/wasser.ttf);
+  font-family: 'Waver';
+  src: url(./fonts/waver-brk/waver.ttf);
+}
+
+@font-face {
+  font-family: 'World of Water';
+  src: url(./fonts/world_of_water/world_of_water.ttf);
 }
 
 .App {
   text-align: center;
-  font-family: 'Wasser Regular', 'Helvetica Neue', sans-serif;
+  font-family: 'World of Water', 'Helvetica Neue', sans-serif;
+  background-color: #ddffff;
+  color: #3c3c3c;
 }
 
 .App-header {
@@ -17,6 +24,7 @@
 .App-title {
   font-size: 2.5em;
   color: navy;
+  font-family: 'Waver', 'Helvetica Neue', sans-serif;
 }
 
 .App-intro {
@@ -28,9 +36,18 @@
 
 .counter {
   background-color: #42c8f4;
+  color: navy;
   border: 1px solid gray;
   border-radius: 5px;
   margin: 10%;
+}
+
+.today-total {
+  font-size: 1.5em;
+}
+
+.total {
+  font-size: 1.8em;
 }
 
 ul {
@@ -38,6 +55,13 @@ ul {
   margin: 0;
   padding: 0;
   font-size: 0.8em;
+}
+
+button {
+  font-size: 1em;
+  background-color: #FFF;
+  border-radius: 5px;
+  font-family: 'World of Water', 'Helvetica Neue', sans-serif;
 }
 
 .drink-item {
@@ -49,3 +73,57 @@ ul {
   color: #FFF;
   padding: 5vw;
 }
+
+/*Medium screens*/
+@media screen and (min-width: 500px) {
+
+  .App-title{
+    font-size: 3em;
+  }
+
+
+}
+
+/*Wider screens*/
+@media screen and (min-width: 700px) {
+  
+  .App-header {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .App-title {
+    font-size: 3.5em;
+    padding: 1vw;
+  }
+
+  .App-intro {
+    padding: 1vw;
+    font-size: 1.2em;
+    margin: auto 5vw;
+  }
+
+  .general {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .overview {
+
+  }
+  
+  .list-title {
+    font-size: 1.8em;
+  }
+
+  ul {
+    font-size: 1em;
+  }
+
+  .footer {
+    padding: 1vw;
+  }
+
+}
+

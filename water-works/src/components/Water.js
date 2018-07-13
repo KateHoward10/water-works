@@ -14,9 +14,13 @@ class Water extends Component {
 		const {drinks} = this.props;
 		return (
 			<div>
-				<Add onSubmit={this.props.onSubmit}/>
-				<Counter drinks={drinks}/>
-				<List onEdit={this.props.onEdit} onDelete={this.props.onDelete} drinks={drinks}/>
+				<div className="general">
+					<div className="overview">
+						<Add onSubmit={this.props.onSubmit}/>
+						<Counter drinks={drinks}/>
+					</div>
+					<List onEdit={this.props.onEdit} onDelete={this.props.onDelete} drinks={drinks}/>
+				</div>
 				<Fact />
 			</div>
 		);
