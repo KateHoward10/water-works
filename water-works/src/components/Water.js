@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Add from './Add';
 import Counter from './Counter';
 import List from './List';
+import Fact from './Fact';
 
 class Water extends Component {
 
@@ -16,7 +17,7 @@ class Water extends Component {
 				<Add onSubmit={this.props.onSubmit}/>
 				<Counter drinks={drinks}/>
 				<List onEdit={this.props.onEdit} onDelete={this.props.onDelete} drinks={drinks}/>
-				<footer className="footer">Recommended daily water intake is 6-8 glasses (1.2 litres)</footer>
+				<Fact />
 			</div>
 		);
 	}
