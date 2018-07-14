@@ -135,6 +135,10 @@ button {
   .target {
     width: 20vw;
   }
+
+  .list-section {
+    width: 30vw;
+  }
   
   .list-title {
     font-size: 1.8em;
@@ -142,7 +146,6 @@ button {
 
   ul {
     font-size: 1em;
-    text-align: right;
   }
 
   .footer {

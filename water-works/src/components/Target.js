@@ -9,7 +9,8 @@ class Target extends Component {
 
 	    return (
 	    	<div>
-	      		<h3>Recommended target: 2l</h3>
+	      		<h3>Recommended target:</h3>
+	      		<h3>2l (8 glasses)</h3>
 	      		<div className="target">
 	  				<div className="water-blob" style={{height: proportion+"vh"}}></div>
 	  			</div>

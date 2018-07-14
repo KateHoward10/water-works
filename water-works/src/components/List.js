@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
 import Drink from './Drink';
 import moment from 'moment';
+import Input from './Input';
 
 class Counter extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			date: moment().format('YYYY-MM-DD'),
+		}
+		this.update = this.update.bind(this);
+	}
+
+	update(e) {
+		this.setState ({ date: e.target.value });
+		console.log(this.state.date);
+	}
 
 	render() {
 		const {drinks, onEdit, onDelete} = this.props;
+		const date = this.state.date;
 
 	    return (
-      		<div>
-      			{drinks.filter(drink => drink.get("created_at") > moment().format('YYYY-MM-DD')).count() ?
+      		<div className="list-section">
+	      		<h4 className="list-title">{moment(date).calendar().split(" at")[0]}</h4>
+	      		{drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') == date).count() ?
       			<div>
-	      			<h4 className="list-title">Today's Drinks</h4>
 	      			<ul>
-	      				{drinks.filter(drink => drink.get("created_at") > moment().format('YYYY-MM-DD')).map((drink, index) =>
+	      				{drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') == date).map((drink, index) =>
 							<Drink onEdit={ onEdit } onDelete={ onDelete } drink={ drink } key={index} />
 	      				)}
 	      			</ul>
-      			</div> : <p>No drinks recorded yet today</p>}
+      			</div> : <p>No drinks recorded</p>}
 
-      			{drinks.filter(drink => drink.get("created_at") > moment().format('YYYY-MM-DD')).count() ?
-      			<div>
-	      			<h4 className="list-title">Previous Drinks</h4>
-	      			<ul>
-	      				{drinks.filter(drink => drink.get("created_at") < moment().format('YYYY-MM-DD')).map((drink, index) =>
-							<Drink onEdit={ onEdit } onDelete={ onDelete } drink={ drink } key={index} />
-	      				)}
-	      			</ul>
-      			</div> : null}
+      			<p>See other days:</p>
+      			<Input onChange={ this.update } type="date" value={date}/>
 			</div>
 	    )
 	}

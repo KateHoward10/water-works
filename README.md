@@ -13,7 +13,7 @@ Nice to have:
 
 Required: yarn, vagrant, command line tool.
 
-1. In the command line, run ```git@github.com:KateHoward10/water-api.git```
+1. In the command line, run ```git clone git@github.com:KateHoward10/water-api.git```
 2. Navigate into water-api
 3. Run ```vagrant up```
 4. In another terminal window run ```git clone git@github.com:KateHoward10/water-works.git```
@@ -32,3 +32,9 @@ I started off by making some rough wireframes and coming up with features I'd li
 Having rustled up the basic structure of the app, which retained amounts and times in its state, I set about using Laravel to build an API, which would persist the data and allow the user to look back on previous days.
 
 I also shared my designs and ideas with some friends, who really did seem to like all the features I had come up with, and also suggested being able to set a target (or even calculate how much water to aim for) and having some sort of visualisation in the app of progress towards this target.
+
+## Progress
+
+In the end, rather than taking in time and amount for each drink, and allowing both to be editted, for simplicity my API only included amount. I set it up to allow post and delete requests, so the amount could be editted.
+
+Once the API was working with the app, I started implementing the features I originally came up with, and worked on styling. The design for this app was mobile first, and with the functionality on its way I made it responsive, with different layout for larger screen sizes.
