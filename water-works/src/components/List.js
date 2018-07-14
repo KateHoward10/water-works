@@ -14,7 +14,6 @@ class Counter extends Component {
 
 	update(e) {
 		this.setState ({ date: e.target.value });
-		console.log(this.state.date);
 	}
 
 	render() {
@@ -23,15 +22,16 @@ class Counter extends Component {
 
 	    return (
       		<div className="list-section">
-	      		<h4 className="list-title">{moment(date).calendar().split(" at")[0]}</h4>
-	      		{drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') == date).count() ?
+	      		<h4 className="list-title">{moment(date).calendar().split(" at")[0]}'s Drinks</h4>
+	      		{drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') === date).count() ?
       			<div>
 	      			<ul>
-	      				{drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') == date).map((drink, index) =>
+	      				{drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') === date).map((drink, index) =>
 							<Drink onEdit={ onEdit } onDelete={ onDelete } drink={ drink } key={index} />
 	      				)}
 	      			</ul>
-      			</div> : <p>No drinks recorded</p>}
+      			{moment().format('YYYY-MM-DD') === date ? null : <h3>Total: {drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') === date).map(drink => drink.get("amount")).reduce((amount, sum) => +amount + +sum, 0)} ml</h3>}
+				</div> : <p>No drinks recorded</p>}
 
       			<p>See other days:</p>
       			<Input onChange={ this.update } type="date" value={date}/>

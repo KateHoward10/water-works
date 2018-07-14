@@ -23,6 +23,9 @@ Required: yarn, vagrant, command line tool.
 
 ## Initial thoughts
 
+![Mobile Design](water-works/src/img/mobile-design.jpg)
+![Desktop Design](water-works/src/img/desktop-design.jpg)
+
 I started off by making some rough wireframes and coming up with features I'd like the app to include:
 - the ability to edit the amount and time of each drink (user might have entered the amount incorrectly/inaccurately, or had the drink some time ago)
 - daily total visualised with stylised water glasses, or maybe just blue blobs

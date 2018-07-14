@@ -57,7 +57,6 @@
   border: 2px solid lightgrey;
   border-top: none;
   border-radius: 0 0 10px 10px;
-  margin: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -77,7 +76,7 @@ ul {
 }
 
 button {
-  font-size: 1em;
+  font-size: 0.8em;
   background-color: #FFF;
   border-radius: 5px;
   font-family: 'World of Water', 'Helvetica Neue', sans-serif;
@@ -137,7 +136,7 @@ button {
   }
 
   .list-section {
-    width: 30vw;
+    width: 40vw;
   }
   
   .list-title {
@@ -145,7 +144,7 @@ button {
   }
 
   ul {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   .footer {

@@ -17,7 +17,7 @@ class Water extends Component {
 			<div>
 				<div className="general">
 					<div className="overview">
-						<Add onSubmit={this.props.onSubmit}/>
+						<Add onSubmit={this.props.onSubmit} drinks={drinks}/>
 						<Counter drinks={drinks}/>
 					</div>
 					<Target drinks={drinks}/>

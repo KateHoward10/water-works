@@ -46,7 +46,7 @@ class Drink extends Component {
 		return (
 			<li>
 				{moment(drink.get("created_at")).calendar() + ": "}
-				<span className="drink-item">{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.amount }/> : drink.get("amount") +" ml"}</span>
+				<span className="drink-item">{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.amount } type="text"/> : drink.get("amount")} ml</span>
 				<Button buttonName={this.state.editable ? "✓" : "Edit"} onClick={this.state.editable ? this.edit : this.makeEditable} />
 				<Button onClick={this.delete} buttonName="☓"/>
 			</li>
