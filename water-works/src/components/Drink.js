@@ -43,12 +43,13 @@ class Drink extends Component {
 
 	render() {
 		const { drink } = this.props;
+		// Displays the date and time for that drink, with its amount, and Edit button which turns amount into an input, and Delete button which removes that drink from the database
 		return (
 			<li>
-				{moment(drink.get("created_at")).calendar() + ": "}
-				<span className="drink-item">{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.amount } type="text"/> : drink.get("amount")} ml</span>
-				<Button buttonName={this.state.editable ? "✓" : "Edit"} onClick={this.state.editable ? this.edit : this.makeEditable} />
-				<Button onClick={this.delete} buttonName="☓"/>
+				{moment(drink.get("created_at")).format("HH:mm") + " "}
+				<span className="drink-item">{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.amount } type="number" className="edit-input"/> : drink.get("amount")} ml</span>
+				<Button className="edit-button" buttonName={this.state.editable ? "✓" : "Edit"} onClick={this.state.editable ? this.edit : this.makeEditable} />
+				<Button className="delete-button" onClick={this.delete} buttonName="☓"/>
 			</li>
 		);
 	}

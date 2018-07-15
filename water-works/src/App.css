@@ -22,17 +22,13 @@
 }
 
 .App-title {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   color: navy;
   font-family: 'Waver', 'Helvetica Neue', sans-serif;
 }
 
-.App-intro {
-}
-
 .form {
   padding: 5vw;
-  font-family: 'World of Water', 'Helvetica Neue', sans-serif;
 }
 
 .counter {
@@ -44,11 +40,11 @@
 }
 
 .today-total {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .total {
-  font-size: 1.8em;
+  font-size: 1.8rem;
 }
 
 .target {
@@ -68,37 +64,32 @@
   border-radius: 0 0 8px 8px;
 }
 
+.list-title {
+  font-size: 1.8rem;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 button {
-  font-size: 0.8em;
+  font-size: 1rem;
   background-color: #FFF;
   border-radius: 5px;
   font-family: 'World of Water', 'Helvetica Neue', sans-serif;
 }
 
 .drink-item {
-  padding: 2vw;
+  padding: 1.5vw;
 }
 
 .footer {
   background-color: navy;
   color: #FFF;
   padding: 5vw;
-}
-
-/*Medium screens*/
-@media screen and (min-width: 500px) {
-
-  .App-title{
-    font-size: 3em;
-  }
-
 }
 
 /*Wider screens*/
@@ -111,13 +102,13 @@ button {
   }
 
   .App-title {
-    font-size: 3.5em;
+    font-size: 3.5rem;
     padding: 1vw;
   }
 
   .App-intro {
     padding: 1vw;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin: auto 5vw;
   }
 
@@ -126,25 +117,12 @@ button {
     justify-content: space-around;
   }
 
-  .overview {
-
-  }
-
-
   .target {
     width: 20vw;
   }
 
-  .list-section {
-    width: 40vw;
-  }
-  
-  .list-title {
-    font-size: 1.8em;
-  }
-
   ul {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   .footer {

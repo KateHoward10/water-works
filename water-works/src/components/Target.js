@@ -31,8 +31,8 @@ class Target extends Component {
 
 	    return (
 	    	<div>
-	      		<h3>Recommended target:</h3>
-	      		<span>{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.target } type="text"/> : this.state.target} ml</span>
+	      		<h3>Target:</h3>
+	      		<span>{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.target } type="number"/> : this.state.target} ml</span>
 	      		<Button buttonName={this.state.editable ? "✓" : "Edit"} onClick={this.makeEditable} />
 	      		<div className="target">
 	  				<div className="water-blob" style={{height: proportion+"vh"}}></div>

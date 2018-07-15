@@ -21,13 +21,12 @@ class Add extends Component {
 	}
 
 	render() {
-		const {drinks} = this.props;
 		return (
 			<form className="form" onSubmit={ this.submit }>
 				<p>Record your drink here</p>
-			    <Input onChange={ this.update } type="text"/>
+			    <Input onChange={ this.update } type="number" className="add-input"/>
 			    <span>ml    </span>
-			    <Button buttonName="Add Drink"/>
+			    <Button buttonName="Add Drink" className="add-button"/>
 			</form>
 		)
 	}

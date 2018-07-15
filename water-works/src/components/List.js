@@ -19,10 +19,10 @@ class Counter extends Component {
 	render() {
 		const {drinks, onEdit, onDelete} = this.props;
 		const date = this.state.date;
-
+		// Lists all drinks for the selected day (default of today), unless there are none, then displays "No drinks recorded"
 	    return (
       		<div className="list-section">
-	      		<h4 className="list-title">{moment(date).calendar().split(" at")[0]}'s Drinks</h4>
+	      		<h4 className="list-title">{date > moment().subtract(2, 'days').format('YYYY-MM-DD') ? moment(date).calendar().split(" at")[0] : moment(date).format("MMMM Do")}'s Drinks</h4>
 	      		{drinks.filter(drink => moment(drink.get("created_at")).format('YYYY-MM-DD') === date).count() ?
       			<div>
 	      			<ul>
