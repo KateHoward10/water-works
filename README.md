@@ -14,11 +14,11 @@ Nice to have:
 Required: yarn, vagrant, command line tool.
 
 1. In the command line, run ```git clone git@github.com:KateHoward10/water-api.git```
-2. Navigate into water-api
+2. Navigate into water-api/
 3. Run ```vagrant up```
 4. In another terminal window run ```git clone git@github.com:KateHoward10/water-works.git```
-5. Navigate into water-works/water-works
-6. Run yarn start
+5. Navigate into water-works/
+6. Run ```yarn``` and ```yarn start```
 
 
 ## Initial thoughts
@@ -29,8 +29,8 @@ I started off by making some rough wireframes (see below) and coming up with fea
 - list of drinks separated into days, with user able to select one day at a time
 - facts about water intake in the footer, maybe changing randomly on page reload
 
-![Mobile Design](water-works/src/img/mobile-design.jpg)
-![Desktop Design](water-works/src/img/desktop-design.jpg)
+![Mobile Design](src/img/mobile-design.jpg)
+![Desktop Design](src/img/desktop-design.jpg)
 
 ## Progress
 
