@@ -7,21 +7,17 @@ import Fact from './Fact';
 
 class Water extends Component {
 
-	componentDidMount() {
-		this.props.onLoad();
-	}
-
 	render() {
-		const {drinks} = this.props;
+		const {drinks, onSubmit, onEdit, onDelete} = this.props;
 		return (
 			<div>
 				<div className="general">
 					<div className="overview">
-						<Add onSubmit={this.props.onSubmit} drinks={drinks}/>
+						<Add onSubmit={onSubmit} drinks={drinks}/>
 						<Counter drinks={drinks}/>
 					</div>
 					<Target drinks={drinks}/>
-					<List onEdit={this.props.onEdit} onDelete={this.props.onDelete} drinks={drinks}/>
+					<List onEdit={onEdit} onDelete={onDelete} drinks={drinks}/>
 				</div>
 				<Fact />
 			</div>

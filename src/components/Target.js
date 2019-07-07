@@ -26,7 +26,7 @@ class Target extends Component {
 
 	render() {
 		const {drinks} = this.props;
-		const total = drinks.filter(drink => drink.get("created_at") > moment().format('YYYY-MM-DD')).map(drink => drink.get("amount")).reduce((amount, sum) => +amount + +sum, 0);
+		const total = drinks.length > 0 ? drinks.filter(drink => drink.created_at > moment().format('YYYY-MM-DD')).map(drink => drink.amount).reduce((amount, sum) => +amount + +sum, 0) : 0;
 		const proportion = Math.min(total / this.state.target * 50, 50);
 
 	    return (

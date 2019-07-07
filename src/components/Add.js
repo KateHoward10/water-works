@@ -5,7 +5,7 @@ import Input from './Input';
 class Add extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {amount: 0}
+		this.state = {amount: 500}
 		this.update = this.update.bind(this);
 		this.submit = this.submit.bind(this);
 	}
@@ -16,8 +16,7 @@ class Add extends Component {
 
 	submit(e) {
 		e.preventDefault();
-		let data = this.state;
-		this.props.onSubmit(data);
+		this.props.onSubmit(this.state.amount);
 	}
 
 	render() {

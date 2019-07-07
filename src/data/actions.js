@@ -6,13 +6,6 @@ export const addDrink = amount => {
 	};
 }
 
-export const setDrinks = drinks => {
-	return {
-		type: "setDrinks",
-		drinks: drinks,
-	};
-}
-
 export const removeDrink = id => {
 	return {
 		type: "removeDrink",
