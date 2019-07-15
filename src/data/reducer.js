@@ -4,25 +4,30 @@ const initialState = {
 
 const reducer = (state, action) => {
 	switch (action.type) {
-		case "addDrink":
+		case 'addDrink':
 			return {
 				...state,
 				drinks: [
 					...state.drinks,
 					{
-						id: Math.max(...state.drinks.map(drink => drink.id).filter(id => typeof id === "number")) + 1,
+						id:
+							state.drinks.map(drink => drink.id).filter(id => typeof id === 'number').length > 0
+								? Math.max(
+										...state.drinks.map(drink => drink.id).filter(id => typeof id === 'number')
+								  ) + 1
+								: 1,
 						amount: action.amount,
 						created_at: new Date(),
 						updated_at: new Date()
 					}
 				]
 			};
-		case "removeDrink":
+		case 'removeDrink':
 			return {
 				...state,
 				drinks: state.drinks.filter(drink => drink.id !== action.id)
 			};
-		case "updateDrink":
+		case 'updateDrink':
 			return {
 				...state,
 				drinks: [
@@ -34,7 +39,8 @@ const reducer = (state, action) => {
 					})
 				]
 			};
-		default: return initialState;
+		default:
+			return initialState;
 	}
 };
 
