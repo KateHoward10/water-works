@@ -26,9 +26,9 @@ class Drink extends Component {
 	}
 
 	edit(e) {
+		const { drink, onEdit } = this.props;
 		e.preventDefault();
-		const id = this.props.drink.id;
-		this.props.onEdit(id, this.state.amount);
+		onEdit(drink.id, this.state.amount);
 		this.setState({
 			editable: false,
 		});
@@ -46,7 +46,7 @@ class Drink extends Component {
 		return (
 			<li>
 				{moment(drink.created_at).format("HH:mm") + " "}
-				<span className="drink-item">{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.amount } type="number" className="edit-input"/> : drink.amount.amount} ml</span>
+				<span className="drink-item">{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.amount } type="number" className="edit-input"/> : drink.amount} ml</span>
 				<Button className="edit-button" buttonName={this.state.editable ? "✓" : "Edit"} onClick={this.state.editable ? this.edit : this.makeEditable} />
 				<Button className="delete-button" onClick={this.delete} buttonName="☓"/>
 			</li>

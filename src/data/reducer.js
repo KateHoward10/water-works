@@ -10,7 +10,7 @@ const reducer = (state, action) => {
 				drinks: [
 					...state.drinks,
 					{
-						id: Math.max(state.drinks.map(drink => drink.id)) + 1,
+						id: Math.max(...state.drinks.map(drink => drink.id).filter(id => typeof id === "number")) + 1,
 						amount: action.amount,
 						created_at: new Date(),
 						updated_at: new Date()
@@ -28,6 +28,7 @@ const reducer = (state, action) => {
 				drinks: [
 					...state.drinks.map(drink => {
 						if (drink.id === action.id) {
+							console.log(drink);
 							return { ...drink, amount: action.amount, updated_at: new Date() };
 						} else return drink;
 					})
