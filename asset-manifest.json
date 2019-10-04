@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/water-works/static/css/main.60ec79d1.chunk.css",
+    "main.js": "/water-works/static/js/main.737b1a34.chunk.js",
+    "main.js.map": "/water-works/static/js/main.737b1a34.chunk.js.map",
+    "runtime-main.js": "/water-works/static/js/runtime-main.33e0e7a3.js",
+    "runtime-main.js.map": "/water-works/static/js/runtime-main.33e0e7a3.js.map",
+    "static/js/2.39abf178.chunk.js": "/water-works/static/js/2.39abf178.chunk.js",
+    "static/js/2.39abf178.chunk.js.map": "/water-works/static/js/2.39abf178.chunk.js.map",
+    "index.html": "/water-works/index.html",
+    "precache-manifest.bda4311c782fbe442d0acd3b5b40272d.js": "/water-works/precache-manifest.bda4311c782fbe442d0acd3b5b40272d.js",
+    "service-worker.js": "/water-works/service-worker.js",
+    "static/css/main.60ec79d1.chunk.css.map": "/water-works/static/css/main.60ec79d1.chunk.css.map",
+    "static/media/App.css": "/water-works/static/media/world_of_water.ce6fe022.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33e0e7a3.js",
+    "static/js/2.39abf178.chunk.js",
+    "static/css/main.60ec79d1.chunk.css",
+    "static/js/main.737b1a34.chunk.js"
+  ]
+}
